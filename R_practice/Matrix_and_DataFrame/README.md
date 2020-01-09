@@ -4,11 +4,13 @@
 #### What is Matrix ?
 > data structure in the form of a two-dimensional table. The values stored in all cells of the matrix must be the same data type.
 ##### Example
-'''R
+'''
+R
 state.x77
 '''
 ![image](https://user-images.githubusercontent.com/46131688/72045038-91f12680-32f8-11ea-8c18-c43c9d1cdf07.png)
-'''R
+'''
+R
 class(state.x77)
 '''
 #### What is Data Frame ?
