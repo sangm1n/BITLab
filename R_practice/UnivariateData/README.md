@@ -22,5 +22,16 @@ barplot()
 ```r
 pie()
 ```
-<img style="display: inline-block" src="https://user-images.githubusercontent.com/46131688/72046719-52c4d480-32fc-11ea-95ba-09e85ce0edb1.png">
-<img style="display: inline-block" src="https://user-images.githubusercontent.com/46131688/72046765-67a16800-32fc-11ea-9b7c-837e30b4ff0c.png">
+<img src="https://user-images.githubusercontent.com/46131688/72046970-d41c6700-32fc-11ea-8e07-9cad4bd7a7eb.png">
+
+* Histogram
+```r
+hist()
+```
+<img src="https://user-images.githubusercontent.com/46131688/72047055-0928b980-32fd-11ea-80b0-2dd12cf58c51.png">
+
+* Box plot
+```r
+boxplot()
+```
+<img src="https://user-images.githubusercontent.com/46131688/72047124-29f10f00-32fd-11ea-88cb-fc1758e59e8e.png">
