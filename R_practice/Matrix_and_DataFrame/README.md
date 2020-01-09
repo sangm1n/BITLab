@@ -16,3 +16,13 @@ class(state.x77)
 
 #### What is Data Frame ?
 > data structure that can group different types of data into a two-dimensional data table.
+* Example
+```r
+head(iris)
+```
+<img src="https://user-images.githubusercontent.com/46131688/72046212-4429ed80-32fb-11ea-8157-64946887bcf5.png">
+
+```r
+class(iris)
+```
+<img src="https://user-images.githubusercontent.com/46131688/72046252-57d55400-32fb-11ea-94f6-f9163e0a03d4.png">
