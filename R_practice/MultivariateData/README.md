@@ -16,6 +16,12 @@ paris()
 ```
 <img src="https://user-images.githubusercontent.com/46131688/72047898-e7303680-32fe-11ea-8418-0c796b14ab95.png">
 
+* Line graph
+```r
+plot(type="l")
+```
+<img src="https://user-images.githubusercontent.com/46131688/72050283-17c69f00-3304-11ea-95e4-24c6e41751b7.png">
+
 #### Correlation analysis
 * Correlation
 ```r
