@@ -23,5 +23,5 @@ barplot()
 ```r
 pie()
 ```
-<img src="https://user-images.githubusercontent.com/46131688/72046719-52c4d480-32fc-11ea-95ba-09e85ce0edb1.png">
-<img src="https://user-images.githubusercontent.com/46131688/72046765-67a16800-32fc-11ea-9b7c-837e30b4ff0c.png">
+<img style="display: inline-block" src="https://user-images.githubusercontent.com/46131688/72046719-52c4d480-32fc-11ea-95ba-09e85ce0edb1.png">
+<img style="display: inline-block" src="https://user-images.githubusercontent.com/46131688/72046765-67a16800-32fc-11ea-9b7c-837e30b4ff0c.png">
