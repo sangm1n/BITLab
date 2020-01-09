@@ -16,8 +16,7 @@ the data consisting of numbers with size.
 ```r
 barplot()
 ```
-<img src="https://user-images.githubusercontent.com/46131688/72046573-1002fc80-32fc-11ea-8df2-4042997aa2dd.png">
-<img src="https://user-images.githubusercontent.com/46131688/72046630-2dd06180-32fc-11ea-8d85-a5cf8345ce79.png">
+<img src="https://user-images.githubusercontent.com/46131688/72046926-bbac4c80-32fc-11ea-9b4b-ed00b3aae349.png">
 
 * Circle graph
 ```r
