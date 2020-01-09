@@ -3,5 +3,7 @@
 ***
 #### What is Matrix ?
 > data structure in the form of a two-dimensional table. The values stored in all cells of the matrix must be the same data type.
+##### Example
+![image](https://user-images.githubusercontent.com/46131688/72045038-91f12680-32f8-11ea-8c18-c43c9d1cdf07.png)
 #### What is Data Frame ?
 > data structure that can group different types of data into a two-dimensional data table.
