@@ -10,3 +10,10 @@ the data consists of values that can be divided into categories or groups, such 
 the data consisting of numbers with size.
 #### What is Univariate data ?
 > the data consisting of only one variable.
+***
+#### Bar graph
+* Example
+```r
+barplot()
+```
+<img src="https://user-images.githubusercontent.com/46131688/72046573-1002fc80-32fc-11ea-8df2-4042997aa2dd.png">
