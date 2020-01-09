@@ -1,1 +1,5 @@
-## R Study using RStudio
+# R Study using RStudio  
+### Download for R  
+https://www.r-project.org/  
+### Download for RStudio  
+https://rstudio.com/products/rstudio/download/
