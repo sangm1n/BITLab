@@ -3,7 +3,7 @@
 ***
 #### What is Matrix ?
 > data structure in the form of a two-dimensional table. The values stored in all cells of the matrix must be the same data type.
-* Example  
+
 '''r
 head(state.x77)
 '''
