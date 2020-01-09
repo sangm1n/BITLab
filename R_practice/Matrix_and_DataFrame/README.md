@@ -11,7 +11,7 @@ head(state.x77)
 ```r
 class(state.x77)
 ```
-<img src="https://user-images.githubusercontent.com/46131688/72045968-c2d25b00-32fa-11ea-9f11-edfa525869fc.png" width="200">
+<img src="https://user-images.githubusercontent.com/46131688/72045968-c2d25b00-32fa-11ea-9f11-edfa525869fc.png" width="100" height="50">
 
 #### What is Data Frame ?
 > data structure that can group different types of data into a two-dimensional data table.
