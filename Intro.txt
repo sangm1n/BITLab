@@ -1,9 +1,9 @@
 
 
-	# message
+	# Topic
 	# study using RStudio
 
-	# Contack
+	# Contact
 	# E-mail : dltkd96als@naver.com
 
 
