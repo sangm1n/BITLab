@@ -4,9 +4,9 @@
 #### What is Data ?
 * Categorical data
 > qualitative data
-The data consists of values that can be divided into categories or groups, such as gender.
+the data consists of values that can be divided into categories or groups, such as gender.
 * Numerical data
 > quantitative data
-The data consisting of numbers with size.
+the data consisting of numbers with size.
 #### What is Univariate data ?
-> The data consisting of only one variable.
+> the data consisting of only one variable.
