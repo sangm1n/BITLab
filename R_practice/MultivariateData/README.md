@@ -3,7 +3,6 @@
 ***
 #### What is Multivariate data ?
 > the data consisting of two or more variables
-***
 #### Scatter
 * Scatter plot (two variables)
 ```r
