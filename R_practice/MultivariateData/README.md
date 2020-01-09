@@ -9,7 +9,7 @@
 ```r
 plot()
 ```
-<img src="https://user-images.githubusercontent.com/46131688/72047684-76891a00-32fe-11ea-9099-ece11856b608.png">
+<img src="https://user-images.githubusercontent.com/46131688/72048173-89e8b500-32ff-11ea-861f-d55ba33a2cb0.png">
 
 * Scatter plot (multiple variables)
 ```r
