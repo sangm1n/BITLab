@@ -29,3 +29,11 @@ boxplot(circumference~Tree, data = Orange,
         main="orange circumference",
         col=c("red", "blue", "green", "grey", "yellow"))
 par(mfrow=c(1, 1))
+head(iris)
+state.x77
+
+class(state.x77)
+head(state.x77)
+
+head(iris)
+class(iris)

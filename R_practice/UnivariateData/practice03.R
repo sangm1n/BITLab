@@ -17,7 +17,7 @@ table(mtcars$cyl)
 barplot(table(mtcars$cyl), main="number of cyl")
 
 # histogram for weight
-hist(mtcars$wt, main="weight", col="grey")
+hist(mtcars$wt, main="weight", col="grey", border="white")
 
 par(mfrow=c(1, 2))
 # box plot, outlier for weight
@@ -27,3 +27,4 @@ boxplot.stats(mtcars$wt)$out
 # box plot, outlier for disp
 boxplot(mtcars$disp, main="disp")
 boxplot.stats(mtcars$disp)$out
+par(mfrow=c(1, 1))

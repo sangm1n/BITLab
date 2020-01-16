@@ -19,3 +19,4 @@ boxplot.stats(score)$out
 # histogram
 hist(score, main="score of student",
      xlab="score", ylab="student", col="grey")
+par(mfrow=c(1, 1))
