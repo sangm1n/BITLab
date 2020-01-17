@@ -14,24 +14,25 @@ the data consisting of numbers with size.
 #### Graph
 * Bar graph
 ```r
-barplot()
+barplot(data, col=COLOR, main="TITLE")
 ```
 <img src="https://user-images.githubusercontent.com/46131688/72046926-bbac4c80-32fc-11ea-9b4b-ed00b3aae349.png">
 
 * Circle graph
 ```r
-pie()
+pie(data, col=COLOR, main="TITLE")
 ```
 <img src="https://user-images.githubusercontent.com/46131688/72046970-d41c6700-32fc-11ea-8e07-9cad4bd7a7eb.png">
 
 * Histogram
 ```r
-hist()
+hist(data, col=COLOR, main="TITLE", xlab="X LABEL", ylab="Y LABEL")
 ```
 <img src="https://user-images.githubusercontent.com/46131688/72047055-0928b980-32fd-11ea-80b0-2dd12cf58c51.png">
 
 * Box plot
 ```r
-boxplot()
+boxplot(data, col=COLOR, main="TITLE")
+boxplot(Petal.Length~Species, data=iris)    # rganize boxplot by group
 ```
 <img src="https://user-images.githubusercontent.com/46131688/72047124-29f10f00-32fd-11ea-88cb-fc1758e59e8e.png">
