@@ -2,7 +2,7 @@
 
 library(ggmap)
 library(ggplot2)
-register_google("AIzaSyAU_3MpDapUjPlkDXFlNskojuSN8hKx1o4")
+register_google("GOOGLE_MAPS_API")
 
 # show map using GoogleMaps
 # roadmap type map
