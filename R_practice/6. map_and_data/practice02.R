@@ -2,7 +2,7 @@
 
 library(ggmap)
 library(ggplot2)
-register_google("AIzaSyAU_3MpDapUjPlkDXFlNskojuSN8hKx1o4")
+register_google("GOOGLE_MAPS_API")
 
 # show markers on map
 addrs <- c("서울특별시 양천구 신정동 목동동로 105",
