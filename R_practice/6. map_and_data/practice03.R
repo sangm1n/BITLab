@@ -2,7 +2,7 @@
 
 library(ggmap)
 library(ggplot2)
-register_google("AIzaSyAU_3MpDapUjPlkDXFlNskojuSN8hKx1o4")
+register_google("GOOGLE_MAPS_API")
 
 # the number of traffic accidents by district in Seoul
 setwd("C:\\Users\\sangmin\\Desktop\\code\\RStudio\\R_practice\\6. map_and_data")
