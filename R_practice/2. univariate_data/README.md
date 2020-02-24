@@ -36,3 +36,4 @@ boxplot(data, col=COLOR, main="TITLE")
 boxplot(Petal.Length~Species, data=iris)    # rganize boxplot by group
 ```
 <img src="https://user-images.githubusercontent.com/46131688/72047124-29f10f00-32fd-11ea-88cb-fc1758e59e8e.png">
+
