@@ -2,6 +2,7 @@
 
 # k-nearest neighbor algorithm
 library(mlbench)
+library(class)
 data(Sonar)
 
 tr.idx <- seq(1, 208, 2)
@@ -23,8 +24,7 @@ acc7 <- mean(pred == cl.ts)
 acc7
 
 
-library(cvTools)
-library(mlbench)
+
 data(Sonar)
 
 k <- 5
@@ -43,8 +43,7 @@ for (i in 1:k) {
 mean(acc)
 
 
-library(cvTools)
-library(mlbench)
+
 data("BreastCancer")
 
 for (i in 1:10) {
