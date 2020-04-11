@@ -2,7 +2,7 @@
 title: "범죄 발생률 데이터 분석"
 author: '이상민'
 date: '_April 2, 2020_'
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
