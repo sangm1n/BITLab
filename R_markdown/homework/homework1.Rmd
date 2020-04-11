@@ -2,7 +2,8 @@
 title: "HOMEWORK #1"
 author: '이상민'
 date: '_April 2, 2020_'
-output: github_document
+output: github_document:
+hard_line_breaks: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -149,3 +150,4 @@ ggplot(df, aes(x=reorder(names, -value), y=value)) +
     labs(x=" ", y="정확도") +
     coord_cartesian(ylim = c(0, 100))
 ```
+
