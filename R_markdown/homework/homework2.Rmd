@@ -2,7 +2,7 @@
 title: "HOMEWORK #2"
 author: '이상민'
 date: '_April 9, 2020_'
-output: html_document
+output: github_document
 editor_options: 
   chunk_output_type: console
 ---
