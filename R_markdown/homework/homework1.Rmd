@@ -149,4 +149,3 @@ ggplot(df, aes(x=reorder(names, -value), y=value)) +
     labs(x=" ", y="정확도") +
     coord_cartesian(ylim = c(0, 100))
 ```
-
