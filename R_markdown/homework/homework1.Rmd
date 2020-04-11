@@ -2,8 +2,7 @@
 title: "HOMEWORK #1"
 author: '이상민'
 date: '_April 2, 2020_'
-output: html_document:
-    keep_md: true
+output: rmarkdown::github_document
 editor_options: 
   chunk_output_type: console
 ---
