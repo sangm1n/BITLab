@@ -24,6 +24,8 @@ for (i in 1:length(years)) {
 }
 ```
 
+-----
+
 ## 범죄대분류별 범죄 수 (top 10)
 
 ``` r
@@ -58,7 +60,9 @@ ggplot(big_top10, aes(x=reorder(범죄대분류, -합계), y=합계)) +
     labs(x="범죄대분류", y="범죄 수")
 ```
 
-![](crime_rate_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](crime_rate_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+-----
 
 ## 범죄중분류별 범죄 수 (top 10)
 
@@ -92,7 +96,9 @@ ggplot(mid_top10, aes(x=reorder(범죄중분류, -합계), y=합계)) +
     labs(x="범죄중분류", y="범죄 수")
 ```
 
-![](crime_rate_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](crime_rate_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+-----
 
 ## 지역별 범죄 수
 
@@ -119,7 +125,6 @@ crime_region <- crime_region[, order(crime_region, decreasing=T)]
 crime_region <- crime_region[, -c(4, 18, 19)]
 crime_region <- t(crime_region)
 
-register_google(key='AIzaSyAU_3MpDapUjPlkDXFlNskojuSN8hKx1o4')
 region <- c("경기", "서울", "부산", "경남", "인천", "대구", "경북", "충남", "광주", "대전", "전북", "강원", "울산", "충북", "전남", "제주")
 
 gc <- geocode(enc2utf8(region))
@@ -160,4 +165,4 @@ gmap+geom_point(data=df_region,
     theme(plot.title = element_text(color="black", size=14, face="bold"))
 ```
 
-![](crime_rate_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](crime_rate_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
