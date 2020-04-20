@@ -3,7 +3,7 @@ library(dplyr)
 library(gridExtra)
 library(DMwR)
 
-setwd("C:/Users/sangmin/Desktop/github/kaggle/titanic")
+setwd("C:/Users/sangmin/Desktop/Kaggle/kaggle-titanic/타이타닉 데이터 분석")
 train <- read.csv("train.csv")
 test <- read.csv("test.csv")
 
