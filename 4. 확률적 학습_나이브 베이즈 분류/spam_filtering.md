@@ -21,7 +21,7 @@
 
 -----
 
-### 2단계 : 데이터 탐색좌 준비
+### 2단계 : 데이터 탐색과 준비
 
 ``` r
 sms_raw <- read.csv("sms_spam.csv", stringsAsFactors = FALSE)
