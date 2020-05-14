@@ -176,7 +176,7 @@ confusionMatrix(sms_results$predict_type, sms_results$actual_type, positive = "s
 
 #### 민감도와 특이도
 
-모델의 **민감도(true positive rate)**는 정확히 분류된 긍정 예시의 비율을 측정한다. 다음 공식처럼 민감도는 참
+모델의 **민감도(true positive rate)** 는 정확히 분류된 긍정 예시의 비율을 측정한다. 다음 공식처럼 민감도는 참
 긍정의 개수를 전체 긍정의 개수로 나눠 계산한다. 전체 긍정은 정확히 분류된 긍정(참 긍정)뿐만 아니라 부정확하게 분류된
 긍정(거짓 부정)을 모두 포함한다.
 
@@ -185,8 +185,8 @@ confusionMatrix(sms_results$predict_type, sms_results$actual_type, positive = "s
 ![](./formula/CodeCogsEqn%20\(2\).png)
 
 </div>
-
-모델의 **특이도(true negative rate)**는 정확하게 분류된 부정 예시의 비율을 측정한다.
+ 
+모델의 **특이도(true negative rate)** 는 정확하게 분류된 부정 예시의 비율을 측정한다.
 
 <div style="text-align: center">
 
@@ -215,7 +215,7 @@ specificity(sms_results$predict_type, sms_results$actual_type, negative = "ham")
 
 #### 정밀도와 재현도
 
-**정밀도(positive predictive value)**는 진짜 긍정인 긍정 예시의 비율로 정의된다. 다시 말해 모델이 긍정
+**정밀도(positive predictive value)** 는 진짜 긍정인 긍정 예시의 비율로 정의된다. 다시 말해 모델이 긍정
 클래스를 예측할 때 예측이 얼마나 정확한지 여부이다. 정밀한 모델은 긍정일 가능성이 매우 높은 경우의 긍정 클래스만을 예측할
 것이다. 이 모델은 매우 신뢰할 수 있다. SMS 스팸 필터의 경우 정밀도가 높으면 모델이 햄은 무시하고 오직 스팸만을
 신중히 겨냥한다는 것을 의미한다.
@@ -226,7 +226,7 @@ specificity(sms_results$predict_type, sms_results$actual_type, negative = "ham")
 
 </div>
 
-한편 **재현율**은 결과가 얼마나 완벽한지에 대한 척도다. 민감도와 같지만 해석이 조금 다르다. 높은 재현율을 갖는 모델은 긍정
+한편 **재현율** 은 결과가 얼마나 완벽한지에 대한 척도다. 민감도와 같지만 해석이 조금 다르다. 높은 재현율을 갖는 모델은 긍정
 예시의 상당 부분을 차지하며, 이는 폭넓다는 것을 의미한다. SMS 스팸 필터는 다수의 스팸 메시지가 정확히 식별된다면 높은
 재현율을 갖는다.
 
@@ -273,7 +273,7 @@ F-척도는 모델의 성능을 하나의 숫자로 설명하기 때문에 여�
 다른 분류기를 판단하기 위한 기준선이다. 완벽한 분류기는 참 긍정률 100%, 거짓 긍정률 0%인 점을 통과하는 곡선이다. 이
 분류기는 어떤 부정 결과를 잘못 분류하기 전에 모든 긍정을 정확하게 식별할 수 있다.  
 ROC 곡선이 완벽한 분류기에 가까워질수록 분류기는 긍정 값을 더욱 잘 식별하게 된다. 이것은 **AUC(Area Under
-the ROC curve)**로 알려진 통계로 측정할 수 있다. AUC는 ROC 곡선의 아래 전체 영역을 측정하며 0.5에서 1
+the ROC curve)** 로 알려진 통계로 측정할 수 있다. AUC는 ROC 곡선의 아래 전체 영역을 측정하며 0.5에서 1
 사이다. AUC 점수를 해석하는 규약은 학교 성적과 비슷한 체계를 사용한다.
 
   - A : 뛰어남 = 0.9 \~ 1.0
