@@ -321,3 +321,4 @@ auc(sms_roc_knn)
 ```
 
     ## Area under the curve: 0.8942
+
