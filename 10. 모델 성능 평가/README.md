@@ -42,9 +42,9 @@ SMS가 스팸이라는 것은 51%만 확신한다. 분류기는 두 경우 모�
 
 혼동 행렬은 예측 값이 실제 값과 일치하는지에 따라 예측을 범주화한 표다. 표에서 한 차원은 예측 값의 가능한 범주를 나타내고,
 다른 차원은 실제 값의 가능한 범주를 나타낸다. 예측 값이 실제 값과 같을 때는 정확한 분류다.
-<div>
+<p align=center>
 <img src="./formula/confusion_matrix.png" width="700" height="500">
-</div>
+</p>
 
 가장 일반적인 성능 척도는 하나의 클래스를 다른 모든 클래스와 비교해 구별하는 모델의 능력을 고려한다. 관심 있는 클래스를
 **긍정(positive) 클래스**라고 하며, 다른 클래스는 모두 **부정(negative) 클래스**라고 한다.
@@ -62,19 +62,15 @@ SMS가 스팸이라는 것은 51%만 확신한다. 분류기는 두 경우 모�
 
 2 by 2 혼동 행렬로 예측 정확도의 정의를 다음과 같이 공식화 할 수 있다.  
 
-<div style="text-align: center">
-
-![](./formula/CodeCogsEqn.png)
-
-</div>
+<p align=center>
+<img src="formula/CodeCogsEqn.png">
+</p>
 
 정확도는 참 긍정과 참 부정의 횟수를 전체 예측 횟수로 나눈 값을 나타내는 비율이다.
 
-<div style="text-align: center">
-
-![](./formula/CodeCogsEqn%20\(1\).png)
-
-</div>
+<p align=center>
+<img src="formula/CodeCogsEqn (1).png">
+</p>
 
 오류율은 1-정확도로 계산할 수 있다. 직관적으로 봤을 때 95% 정확한 모델이면 5% 부정확하기 때문이다.
 
@@ -182,19 +178,15 @@ confusionMatrix(sms_results$predict_type, sms_results$actual_type, positive = "s
 긍정의 개수를 전체 긍정의 개수로 나눠 계산한다. 전체 긍정은 정확히 분류된 긍정(참 긍정)뿐만 아니라 부정확하게 분류된
 긍정(거짓 부정)을 모두 포함한다.
 
-<div style="text-align: center">
-
-![](./formula/CodeCogsEqn%20\(2\).png)
-
-</div>
+<p align=center>
+<img src="formula/CodeCogsEqn (2).png">
+</p>
  
 모델의 **특이도(true negative rate)** 는 정확하게 분류된 부정 예시의 비율을 측정한다.
 
-<div style="text-align: center">
-
-![](./formula/CodeCogsEqn%20\(3\).png)
-
-</div>
+<p align=center>
+<img src="formula/CodeCogsEqn (3).png">
+</p>
 
 caret 패키지는 예측 값과 실제 값 벡터에서 직접 민감도와 특이도를 계산하는 함수를 제공한다.
 
@@ -222,21 +214,17 @@ specificity(sms_results$predict_type, sms_results$actual_type, negative = "ham")
 것이다. 이 모델은 매우 신뢰할 수 있다. SMS 스팸 필터의 경우 정밀도가 높으면 모델이 햄은 무시하고 오직 스팸만을
 신중히 겨냥한다는 것을 의미한다.
 
-<div style="text-align: center">
-
-![](./formula/CodeCogsEqn%20\(4\).png)
-
-</div>
+<p align=center>
+<img src="formula/CodeCogsEqn (4).png">
+</p>
 
 한편 **재현율** 은 결과가 얼마나 완벽한지에 대한 척도다. 민감도와 같지만 해석이 조금 다르다. 높은 재현율을 갖는 모델은 긍정
 예시의 상당 부분을 차지하며, 이는 폭넓다는 것을 의미한다. SMS 스팸 필터는 다수의 스팸 메시지가 정확히 식별된다면 높은
 재현율을 갖는다.
 
-<div style="text-align: center">
-
-![](./formula/CodeCogsEqn%20\(5\).png)
-
-</div>
+<p align=center>
+<img src="formula/CodeCogsEqn (5).png">
+</p>
 
 caret 패키지는 예측 클래스와 실제 클래스 벡터에서 이 척도 중 하나를 계산하는 데 사용할 수 있다. 정밀도는
 posPredValue() 함수를 사용하고 재현율은 앞에서 사용했던 sensitivity() 함수를 사용한다.
