@@ -17,11 +17,12 @@
 b는 x가 증가할 때마다 직선이 얼마나 올라가는지를 명시한다. a는 절편이라고 하는데, 직선이 세로 y축과 교차하는 지점을
 명시한다.
 
-<div style="text-align: center">
-
+<p align=center>
+  
 <img src="formula/f(x).gif" width=300>
 
-</div>
+</p>
+
 
 기계가 해야 할 일은 명시된 선이 제공된 x 값과 y 값의 관계를 가장 잘 나타내도록 a와 b의 값을 찾아내는 것이다.  
 회귀는 과거를 설명하는 데 사용할 수 있으며, 동시에 미래의 값을 외삽하는 등 거의 모든 작업에 응용할 수 있다. 구체적인 사례는
@@ -40,11 +41,11 @@ b는 x가 증가할 때마다 직선이 얼마나 올라가는지를 명시한�
 평소와 달리 매우 춥고 영하인 상태였다. 다음 산포도는 발사할 때 온도와 비교해 과거 23회의 발사에서 탐지된 주요
 오링의 손상을 도표로 보여준다.
 
-<div style="text-align: center">
+<p align=center>
 
-<img src="formula/oring.gif">
+<img src="formula/oring.GIF">
 
-</div>
+</p>
 
 도포를 관찰해보면 고온에서 발사할 때 오링의 손상 이벤트가 적어지는 것을 알 수 있다. 또한 가장 낮은 온도인 53℉의 발사에서
 두 번의 손상 이벤트가 있었다. 이러한 정보를 토대로 보면 20℉ 보다 더 낮은 온도에서 챌린저를 발사할 계획은 뭔가 개운치
@@ -52,11 +53,11 @@ b는 x가 증가할 때마다 직선이 얼마나 올라가는지를 명시한�
 우주 왕복선 발사 데이터의 방정식에서 추정된 회귀 파라미터가 a = 3.70, b = -0.048이라고 가정해보자. 위에서 언급한
 선형 방정식에 대입하면 y = 3.70 - 0.048x라는 식이 나온다. 산포도에 이와 같은 직선을 그리면 다음과 같다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/oring2.gif">
 
-</div>
+</p>
 
 직선에서 볼 수 있듯 60℉에서 한 개 조금 못 미치는 오링 파손이, 70℉ 에서는 약 0.3개의 파손이 예상된다. 챌린저 발사의
 예상 온도인 31℉까지 모델을 외삽하면 오링 손상 이벤트는 3.70 - 0.048 \* 31 = 2.21로 예상된다. 오링이
@@ -68,42 +69,42 @@ b는 x가 증가할 때마다 직선이 얼마나 올라가는지를 명시한�
 ### 보통 최소 제곱 추정
 
 a, b의 최적 추정치를 결정하고자 **보통 최소 제곱법(OLS, Ordinary Least Squares)** 방법을 사용했다.
-OLS 회귀에서 기울기와 절편은 **오차 제곱합(SSE, Sum of the Squared Errors)**이 최소화되게
+OLS 회귀에서 기울기와 절편은 **오차 제곱합(SSE, Sum of the Squared Errors)** 이 최소화되게
 선택된다. 잔차라고도 알려진 이 오차는 y의 예측 값과 실제 값 사이의 수직 거리의 차이다.
 
-<div style="text-align: center">
+<p align=center>
 
-<img src="formula/oring3.gif">
+<img src="formula/oring3.GIF">
 
-</div>
+</p>
 
 수학적 용어로 OLS 회귀의 목표는 다음 방정식을 최소화하는 작업으로 표현된다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/CodeCogsEqn.gif">
 
-</div>
+</p>
 
 이 방정식은 y의 실제 값과 예측 값의 차로 e(오차)를 정의한다. 오차 값은 음수를 없애고자 모두 제곱되고, 데이터의 모든 점을
 합산한다.  
 a의 해는 b 값에 종속된다. 이 값은 다음 식으로 얻을 수 있다. x와 y항의 위에 있는 가로 막대는 x와 y의 평균값을
 가리킨다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/CodeCogsEqn (1).gif">
 
-</div>
+</p>
 
 최소 제곱 오차(minimum squared error)를 만드는 b 값은 다음 식과 같으며 이 식은 공분산 함수를 분산 함수로
 나눈 것과 같다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/CodeCogsEqn (2).gif">
 
-</div>
+</p>
 
 launch라는 이름의 우주 왕복선 발사 데이터가 있고 독립 변수 x의 이름은 temperature, 종속 변수 y의 이름은
 distress\_ct라고 가정하자.
@@ -130,11 +131,11 @@ a
 상관관계는 피어슨 상관 계수를 나타낸다. 상관관계는 -1에서 +1 사이의 범위에 있고 0에 가까울수록 상관관계는 선형 관계가
 없음을 나타낸다.
 
-<div style="text-align: center">
+<p align=center>
 
-<img src="formula/pearson.gif" width=250>
+<img src="formula/pearson.GIF" width=250>
 
-</div>
+</p>
 
 ``` r
 r <- cov(launch$temperature, launch$distress_ct) / 
@@ -178,28 +179,28 @@ cor(launch$temperature, launch$distress_ct)
 다중 회귀 모델은 일반적으로 다음 방정식 형태를 따른다. 종속 변수 y는 절편 항 α와 각 특징 i에 대해 추정된 β 값과 x
 변수를 곱해 더한 값으로 명시된다. 오차 항 ε(epsilon)은 예측이 완벽하지 않다는 것을 상기시키고자 더해졌다.
 
-<div style="text-align: center">
+<p align=center>
 
-<img src="formula/multiple.gif" width=300>
+<img src="formula/multiple.GIF" width=300>
 
-</div>
+</p>
 
 이것을 굵은 글꼴 행렬 표기를 이용해 나타낸다. 이제 목표는 Y의 예측 값과 실제 값 사이의 오차 제곱합을 최소화하는 회귀 계수인
 벡터 β를 푸는 것이다.  
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/CodeCogsEqn (3).gif">
 
-</div>
+</p>
 
 따라서 벡터 β의 추정치인 β-hat을 구하면 아래와 같다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/CodeCogsEqn (4).gif">
 
-</div>
+</p>
 
 다음 코드로 파라미터 y와 x를 받아 추정된 β 계수의 벡터를 반환하는 기본 회귀 함수 reg()를 생성할 수 있다.
 
