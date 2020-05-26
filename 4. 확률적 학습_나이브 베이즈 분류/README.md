@@ -50,13 +50,17 @@ A∩B 표기는 A와 B가 모두 발생하는 사건을 나타낸다. 이것을 
 
 종속 사건 간의 관계는 베이즈 정리를 이용해 설명할 수 있다.
 
-![](./formula/CodeCogsEqn.png)
+<p align=center>
+<img src="formula/CodeCogsEqn.png">
+</p>
 
 P(B|A)는 ’사건 B가 발생한 경우 사건 A의 확률’로 읽는다. 이는 **조건부 확률**이라고 하는데, A의 확률이 사건 B가
 발생한 경우에 종속적이기 때문이다.  
 다음과 같은 공식은 전통적으로 베이즈 이론을 나타내는 방식이다.
 
-![](./formula/CodeCogsEqn%20\(1\).png)
+<p align=center>
+<img src="formula/CodeCogsEqn (1).png">
+</p>
 
 이 식에서 P(A)는 사전 확률, 즉 특정 사상이 일어나기 전의 확률이다. 이 식에서 P(B|A)는 우도, P(B)는 주변
 우도라고 한다. 사전 확률과 우도를 토대로 베이즈 이론을 적용해 사후 확률 P(A|B)를 계산할 수 있다.
@@ -83,7 +87,9 @@ P(B|A)는 ’사건 B가 발생한 경우 사건 A의 확률’로 읽는다. �
 대한 조건에 사건이 독립이라고 가정한다. 그렇게 되면 독립 사건의 확률실 P(A∩B) = P(A) × P(B)을 사용할 수
 있다.
 
-![](./formula/CodeCogsEqn%20\(2\).png) <br><br>
+<p align=center>
+<img src="formula/CodeCogsEqn (2).png">
+</p>
 
 #### 라플라스 추정량
 
