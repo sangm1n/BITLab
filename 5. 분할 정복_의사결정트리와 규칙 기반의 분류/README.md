@@ -53,7 +53,9 @@
 아이템에 대한 뚜렷한 공통점이 없기 때문에 정보를 거의 제공하지 않는다. 의사 결정 트리는 엔트로피를 줄이는 분할을 찾고
 궁극적으로 그룹 내의 동질성을 증가시키려고 한다. 수학적 개념으로 엔트로피는 다음과 같이 명시된다.
 
-![](./formula/CodeCogsEqn.png)
+<p align=center>
+<img src="formula/CodeCogsEqn.png">
+</p>
 
 이 식에서 데이터 세그먼트 S에 대해 항목 c는 클래스의 레벨 수를 가리키고, p는 클래스 레벨 i에 속하는 값의 비율을
 가리킨다. 예를 들어 빨간색(60%)과 흰색(40%) 두 클래스를 갖는 데이터 파티션이 있다고 하면, 엔트로피는
@@ -70,23 +72,25 @@ curve(-x*log2(x) - (1-x)*log2(1-x),
       col="blue", xlab="x", ylab="Entropy", lwd=4)
 ```
 
-![](decision_tree_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+<p align=center>
+<img src="decision_tree_files/figure-gfm/unnamed-chunk-1-1.png">
+</p>
 
 한 클래스가 다른 클래스에 대해 점점 더 우세할수록 엔트로피는 0으로 줄어든다.  
 분할을 위한 최적의 특징을 결정하고자 엔트로피를 사용하려면 알고리즘은 각 특징별로 분할로 인해 생기는 동질성의 변화를 계산한다.
 이것이 정보 획득량(information gain)이라고 하는 척도다. 특징 F의 정보 획득량은 분할 전 세그먼트(S1)와
 분할로 생성된 파티션(S2)의 엔트로피 차로 계산된다.  
 
-<center>
-
-*정보 획득량(F) = 엔트로피(S1) - 엔트로피(S2)*
-
-</center>
+<p align=center>
+정보 획득량(F) = 엔트로피(S1) - 엔트로피(S2)
+</p>
 
 분할 후에 데이터는 하나 이상의 파티션으로 나뉘기 때문에 모든 파티션의 전체 엔트로피를 고려할 필요가 있다. 그렇게 하려면
 파티션에 소속된 모든 레코드의 비율에 따라 각 파티션의 엔트로피에 가중치를 부여한다.
 
-![](./formula/CodeCogsEqn%20\(1\).png)
+<p align=center>
+<img src="formula/CodeCogsEqn (1).png">
+</p>
 
 분할로 생기는 전체 엔트로피는 n개 파티션에 대해 파티션에 속하는 예시 비율(wi)로 각 파티션의 엔트로피에 가중치를 부여해서
 합산한 것이다.  
