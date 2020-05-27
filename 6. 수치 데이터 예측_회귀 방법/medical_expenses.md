@@ -200,11 +200,11 @@ summary(ins_model)
 대한 연령의 영향은 전 연령에 걸쳐 일정하지 않을 것이다. 아마 최고령 인구의 경우 치료비가 과도하게 비싸질 것이다.  
 비선형 관계를 고려하고자 높은 차수의 항을 회귀 모델에 추가해 모델을 다항식으로 취급한다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/CodeCogsEqn (5).gif">
 
-</div>
+</p>
 
 이렇게 하면 연령의 영향을 연령 제곱의 함수로 측정할 수 있다.
 
