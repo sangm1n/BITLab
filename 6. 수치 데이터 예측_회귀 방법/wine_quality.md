@@ -159,11 +159,11 @@ cor(p.rpart, wine_test$quality)
 **평균 절대 오차(MAE, Mean Absolute Error)**는 평균적으로 예측이 실제 값에서 얼마나 멀리 있는지를
 나타낸다. MAE의 식은 다음과 같으며, 여기서 n은 예측 개수를 나타내고 e는 예측 i에 대한 오차를 나타낸다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/mae.gif">
 
-</div>
+</p>
 
 ``` r
 MAE <- function(actual, predicted) {
