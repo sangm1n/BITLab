@@ -29,24 +29,24 @@
 이때 분할 후 결과의 동질성을 가장 크게 증가시키는 특징을 분할 조건으로 한다. 하지만 수치 데이터에는 엔트로피가 정의되지
 않으므로 수치 의사 결정 트리는 분산, 표준 편차, 평균과의 절대 편차 같은 통계량으로 동질성을 측정한다.
 
-가장 일반적인 분할 기준은 **표준 편차 축소(SDR, Standard Deviation Reduction)**다.
+가장 일반적인 분할 기준은 **표준 편차 축소(SDR, Standard Deviation Reduction)** 다.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/CodeCogsEqn (6).gif">
 
-</div>
+</p>
 
 이 식은 분할 이전의 표준 편차와 분할 이후의 가중 표준 편차를 비교해 표준 편차의 축소를 측정한다. sd(T) 함수는 집합 T의
 표준 편차이며, T1, T2, …, Tn은 특징에 대해 분할된 집합들이다. |T| 항은 집합 T의 관측 개수를 나타낸다.
 
 예를 들어 트리가 이진 특징 A나 이진 특징 B에 대해 분할을 수행할지 여부를 결정하는 다음 경우를 고려해보자.
 
-<div style="text-align: center">
+<p align=center>
 
 <img src="formula/matrix2.gif">
 
-</div>
+</p>
 
 ``` r
 tee <- c(1, 1, 1, 2, 2, 3, 4, 5, 5, 6, 6, 7, 7, 7, 7)
