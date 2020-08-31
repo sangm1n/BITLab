@@ -1,0 +1,193 @@
+---
+title: "<center>BITL Competition</center>"
+author: "<div align='right'><i>이상민</i></div>"
+date: '<div align="right"><i>2020.08.21</i></right></div>'
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("C:\\Users\\sangmin\\Desktop\\BITlab")
+```
+
+## Dataset
+
+ - 녹내장 진단을 위한 안저 사진에서 feature 추출한 데이터셋
+ - 1열 : label (0:정상, 1:녹내장)
+ - 2열 : sid (study id)
+ - 3~59열 : features
+
+## Requirements
+ - set.seed가 필요한 경우는 모두 100으로 지정
+ - 5-fold cross validation 으로 accuracy 측정
+
+## Feature selection
+### 1. filter method
+ - 각각의 변수들에 대해 통계적인 점수 부여
+ - 부여된 점수를 바탕으로 변수의 순위를 매기고 변수 선택
+ 
+### 2. wrapper method
+ - 변수의 일부만을 모델링에 사용한 후 그 결과를 평가하는 작업을 반복하면서 변수 선택
+ - 가장 좋은 성능을 보이는 subset을 뽑아내는 방법
+
+#### forward selection
+ - 변수가 없는 상태로 시작
+ - 반복할 때마다 가장 중요한 변수 추가
+
+#### backward elimination
+ - 모든 변수를 가지고 시작
+ - 가장 덜 중요한 변수를 하나씩 제거
+
+#### stepwise selection
+ - forward selection + backward elimination
+ 
+### 3. embedded method
+ - filter method + wrapper method
+ - 두 방법을 결합하여 어떤 변수가 가장 크게 기여하는지 찾아내는 방법
+ - 과적합(overfitting)을 줄이기 위해 내부적으로 규제를 가하는 방식 사용
+
+```{r, message=FALSE, warning=FALSE, results=FALSE}
+library(klaR)
+library(MASS)
+library(caret)
+library(randomForest)
+
+data <- read.csv("radiomics_fundus_ds.csv")
+data <- data[-2]
+
+# 모든 feature를 갖는 변수
+full <- lm(cl~., data)
+# feature가 없는 변수
+null <- lm(cl~1, data)
+
+# Forward selection
+forward <- step(null, direction="forward",
+                scope=list(lower=null, upper=full))
+# Backward elimination
+backward <- step(full, direction="backward")
+# Stepwise selection
+stepwise <- step(null, direction="both",
+                 scope=list(upper=full))
+```
+
+ - check the selected features
+
+```{r, message=FALSE, warning=FALSE}
+forward_col <- rownames(data.frame(forward[["coefficients"]][-1]))
+backward_col <- rownames(data.frame(backward[["coefficients"]][-1]))
+stepwise_col <- rownames(data.frame(stepwise[["coefficients"]][-1]))
+
+forward_col
+backward_col
+stepwise_col
+
+data[, 1] <- as.factor(data[, 1])
+
+set.seed(100)
+indexTrain <- createDataPartition(data$cl, p=.7, list=FALSE)
+train_dt <- data[indexTrain, ]
+test_dt <- data[-indexTrain, ]
+
+fitControl <- trainControl(method="repeatedcv", number=5, repeats=5)
+
+forward <- function(x) {
+    train_dt <- data[indexTrain, c("cl", forward_col)]
+    test_dt <- data[-indexTrain, c("cl", forward_col)]
+    
+    model <- train(cl~., data=train_dt, method=x, trControl=fitControl, verbose=FALSE)
+    pred <- predict(model, test_dt)
+    matrix <- confusionMatrix(pred, test_dt$cl)
+    
+    return(matrix)
+}
+
+backward <- function(x) {
+    train_dt <- data[indexTrain, c("cl", backward_col)]
+    test_dt <- data[-indexTrain, c("cl", backward_col)]
+    
+    model <- train(cl~., data=train_dt, method=x, trControl=fitControl, verbose=FALSE)
+    pred <- predict(model, test_dt)
+    matrix <- confusionMatrix(pred, test_dt$cl)
+    
+    return(matrix)
+}
+
+stepwise <- function(x) {
+    train_dt <- data[indexTrain, c("cl", stepwise_col)]
+    test_dt <- data[-indexTrain, c("cl", stepwise_col)]
+    
+    model <- train(cl~., data=train_dt, method=x, trControl=fitControl, verbose=FALSE)
+    pred <- predict(model, test_dt)
+    matrix <- confusionMatrix(pred, test_dt$cl)
+    
+    return(matrix)
+}
+```
+
+ - Naive Bayes
+
+```{r, message=FALSE, warning=FALSE}
+forward_mat <- forward("nb")
+forward_mat$overall["Accuracy"]
+
+backward_mat <- backward("nb")
+backward_mat$overall["Accuracy"]
+
+stepwise_mat <- stepwise("nb")
+stepwise_mat$overall["Accuracy"]
+
+result_nb <- cbind(forward_mat$overall["Accuracy"], 
+                   backward_mat$overall["Accuracy"], 
+                   stepwise_mat$overall["Accuracy"])
+colnames(result_nb) <- c("forward", "backward", "stepwise")
+result_nb
+```
+
+ - Random Forest
+ 
+```{r, message=FALSE, warning=FALSE}
+forward_mat <- forward("rf")
+forward_mat$overall["Accuracy"]
+
+backward_mat <- backward("rf")
+backward_mat$overall["Accuracy"]
+
+stepwise_mat <- stepwise("rf")
+stepwise_mat$overall["Accuracy"]
+
+result_rf <- cbind(forward_mat$overall["Accuracy"], 
+                   backward_mat$overall["Accuracy"], 
+                   stepwise_mat$overall["Accuracy"])
+colnames(result_rf) <- c("forward", "backward", "stepwise")
+result_rf
+```
+
+ - Support Vector Machine
+ 
+```{r, message=FALSE, warning=FALSE}
+forward_mat <- forward("svmLinear")
+forward_mat$overall["Accuracy"]
+
+backward_mat <- backward("svmLinear")
+backward_mat$overall["Accuracy"]
+
+stepwise_mat <- stepwise("svmLinear")
+stepwise_mat$overall["Accuracy"]
+
+result_svm <- cbind(forward_mat$overall["Accuracy"], 
+                    backward_mat$overall["Accuracy"], 
+                    stepwise_mat$overall["Accuracy"])
+colnames(result_svm) <- c("forward", "backward", "stepwise")
+result_svm
+```
+
+## Result
+```{r, message=FALSE, warning=FALSE}
+rownames(result_nb) <- "Naive Bayes"
+rownames(result_rf) <- "Random Forest"
+rownames(result_svm) <- "SVM"
+
+rbind(result_nb, result_rf, result_svm)
+```
